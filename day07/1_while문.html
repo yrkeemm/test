@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>while문</h2>
+    <script>
+        for (let i = 0; i < 3; i++){
+            document.write('김유림<br>');
+        }
+        document.write('for문 바깥<br>');
+
+        let i = 0;
+        while(i < 3){
+            document.write('김유림<br>');
+            i++; // i = i + 1;
+        }
+        document.write('while문 바깥! <br>')
+
+        //랜덤한 숫자를 받아오되 5가 나오면 더이상 받지 말것.
+
+        //Math.floor(값) : 함수 사용 결과가 괄호 안에 있는 값을 내림한 결과
+        document.write(Math.random()*10);
+        document.write('<br>');
+        document.write(Math.floor(Math.random()*10));
+
+        //0~9사이의 랜덤숫자를 출력하되 5를 마지막으로 출력하기
+        let num = Math.floor(Math.random()*10);
+        
+        while(num !== 5){
+            document.write(`랜덤결과는 ${num}입니다 <br>`);
+            num = Math.floor(Math.random()*10);
+        }
+        document.write('<br><br>');
+        while(true){
+            let num2 = Math.floor(Math.random()*10);
+            if(num2 % 2 == 0){
+                continue;
+            }
+            if(num2 == 5){
+                break; //자신을 감싸는 while문 즉시 종료
+            }
+            document.write(`두번째 시도 랜던값 : ${num2}<br>`);
+        }
+
+        document.write('<br><br>');
+        let num3 = 0; //do안에 있는 변수명은 do 안에서만 사용가능하므로 num3변수를 바깥으로 뺴줌 
+        do{
+            num3 = Math.floor(Math.random()*10);
+            document.write(`결과 : ${num3}<br>`);
+        }while(num3 != 5);
+
+
+
+
+    </script>
+</body>
+</html>
